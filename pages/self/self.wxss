@@ -1,0 +1,103 @@
+
+.self {
+    overflow: hidden;
+}
+
+.titieArea {
+    width: 100%;
+    height: 252rpx;
+    background-color: var(--bar-color);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.titieArea>view {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.titieArea>view>view:nth-of-type(1) {
+    display: flex;
+}
+
+
+.titieArea>view>view>view {
+    margin: 20rpx 30rpx 0rpx 20rpx;
+}
+
+.titieArea>view>view>view>view:nth-of-type(1) {
+    margin-bottom: 22rpx;
+}
+
+.titieArea text:nth-of-type(1) {
+    font-size: 36rpx;
+    line-height: 12rpx;
+    color: #ffffff;
+    font-family: "Source Han Sans CN";
+}
+
+.titieArea>view>view:nth-of-type(1) {
+    position: absolute;
+    left: 100rpx;
+}
+
+.titieArea>view>view:nth-of-type(2) {
+    font-size: 60rpx;
+    display: flex;
+    align-items: center;
+    width: 40rpx;
+    height: 100%;
+    position: absolute;
+    right: 28rpx;
+}
+
+.couponsOrintegralContains {
+    width: 100%;
+    height: 125rpx;
+    background-color: #58a4b4;
+    opacity: 0.902;
+    display: flex;
+    margin-bottom: 20rpx;
+}
+.couponsOrintegralContains .coupons{
+    border-right: 1px #9dcad3 solid;
+}
+.couponsOrintegralContains .coupons,
+.couponsOrintegralContains .integral {
+    width: 50%;
+    height: 100%;
+    font-size: 32rpx;
+    color: #ffffff;
+    letter-spacing: 2px;
+    line-height: 40rpx;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.couponsOrintegralContains text:nth-of-type(2n) {
+    opacity: 0.502;
+    font-size: 26rpx;
+}
+.contact{
+    height: 169rpx;
+    margin-top: 20rpx;
+}
+.contact text{
+    font-size: 26rpx;
+    letter-spacing: 1rpx;
+    line-height: 40rpx;
+    color: #999999;
+    text-align: center;
+}
+.contact view{
+    /* height: 50%; */
+    width: 100%;
+    background-color: #ffffff;
+    padding: 24rpx 32rpx;
+}

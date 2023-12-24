@@ -1,0 +1,25 @@
+page {
+    background-color: #fff;
+}
+
+commonIssueAnswer {
+    overflow: hidden;
+}
+
+.van-cell__title {
+    font-size: 32rpx !important;
+    letter-spacing: 2rpx !important;
+    line-height: 40rpx !important;
+    color: #333333 !important;
+    padding-top: 15rpx;
+}
+.van-cell{
+    border-bottom: 2rpx solid #cccccc;
+}
+.van-cell__label{
+    font-size: 30rpx !important;
+    letter-spacing: 2rpx !important;
+    line-height: 40rpx !important;
+    color: #666666 !important;
+    padding: 15rpx 0rpx;
+}

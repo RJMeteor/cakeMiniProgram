@@ -1,0 +1,34 @@
+page {
+    background-color: #ffffff;
+}
+
+.phone {
+    overflow: hidden;
+}
+
+.phone>view:nth-of-type(2),.phone>view:nth-of-type(3){
+    border: 2rpx solid #ccc;
+}
+.submit {
+    width: 100%;
+    background-color: #58a4b4;
+    font-size: 36rpx;
+    line-height: 36rpx;
+    color: #ffffff;
+    height: 100rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+.inputView{
+    padding: 30rpx;
+}
+.inputView view {
+    width: 100%;
+    height: 80rpx;
+    font-size: 32rpx;
+    color: #333333;
+    display: flex;
+}

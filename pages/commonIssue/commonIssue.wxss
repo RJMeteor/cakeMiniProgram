@@ -1,0 +1,15 @@
+page{
+    background-color: #ffffff;
+}
+
+.commonIssue{
+    overflow: hidden;
+}
+.van-cell{
+    height: 125rpx;
+    align-items: center;
+    font-size: 64rpx;
+letter-spacing: 4rpx;
+line-height: 80rpx;
+border-bottom: 1px solid #cccccc;
+}

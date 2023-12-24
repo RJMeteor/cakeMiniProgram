@@ -1,0 +1,12 @@
+<view class="commonIssueAnswer">
+    <navigation-bar title="常见问题"></navigation-bar>
+    <view style="height: {{spaceHardOverflow}};"></view>
+
+
+    <van-cell  
+    border="{{false}}"
+    title="Q1:FASFDSAFSAFSDAF"  
+    label="描述信息描信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息" />
+
+
+</view>

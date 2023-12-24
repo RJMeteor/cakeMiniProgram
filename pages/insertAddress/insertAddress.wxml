@@ -1,0 +1,24 @@
+<view class="updateAddress">
+    <navigation-bar title="我的收获地址"></navigation-bar>
+    <view style="height: {{spaceHardOverflow}};"></view>
+
+    <view class="address" wx:for="{{address}}" wx:key="index">
+        <view>
+            <image style="height: 73rpx;width: 73rpx;" src="../../images/location.png" mode="aspectFill"></image>
+        </view>
+        <view bindtap="setAddress" data-arrayindex="{{index}}">
+            <view>
+                {{item.username}}  {{item.phone}}
+            </view>
+            <view>
+                {{item.addressText}}{{item.houseNumber}}
+            </view>
+        </view>
+        <view>
+            <image bindtap="navigationUpdateAddress" data-update="{{index}}"  style="height: 33rpx;width: 33rpx;"  src="../../images/edit.png"></image>
+            <image  style="height: 33rpx;width: 33rpx;" data-delete="{{index}}" bindtap="doDelete" src="../../images/delete.png"></image>
+        </view>
+    </view>
+
+    <view class="submit" bindtap="doSubmit">新增地址</view>
+</view>

@@ -1,0 +1,6 @@
+page{
+    --bar-color: #58a4b4;
+    --text-color: #ffffff;
+    --icon-color: #b7d8df;
+    background-color: #f5f5f5;
+}

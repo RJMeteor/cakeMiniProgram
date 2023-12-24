@@ -1,0 +1,76 @@
+{
+    "pages": [
+        "pages/home/home",
+        "pages/member/member",
+        "pages/orders/orders",
+        "pages/self/self",
+        "pages/bindPhone/bindPhone",
+        "pages/relieveBindPhone/relieveBindPhone",
+        "pages/anewBindPhone/anewBindPhone",
+        "pages/rename/rename",
+        "pages/updatePassword/updatePassword",
+        "pages/detailedInformation/detailedInformation",
+        "pages/selfCars/selfCars",
+        "pages/commonIssue/commonIssue",
+        "pages/integralCentre/integralCentre",
+        "pages/commonIssueAnswer/commonIssueAnswer",
+        "pages/insertAddress/insertAddress",
+        "pages/updateAddress/updateAddress",
+        "pages/integral/integral",
+        "pages/selfMember/selfMember",
+        "pages/coupons/coupons",
+        "pages/productDetails/productDetails",
+        "pages/commodityComments/commodityComments",
+        "pages/commondityCoupons/commondityCoupons",
+        "pages/productsSelecter/productsSelecter",
+        "pages/comments/comments",
+        "pages/submitOrders/submitOrders",
+        "pages/reminder/reminder",
+        "pages/finishOrders/finishOrders"
+    ],
+    "window": {
+        "navigationStyle": "custom"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "iconPath": "images/home.png",
+                "pagePath": "pages/home/home",
+                "selectedIconPath": "images/home_active.png",
+                "text": "首页"
+            },
+            {
+                "iconPath": "images/member.png",
+                "pagePath": "pages/member/member",
+                "selectedIconPath": "images/member_active.png",
+                "text": "会员"
+            },
+            {
+                "iconPath": "images/orders.png",
+                "pagePath": "pages/orders/orders",
+                "selectedIconPath": "images/orders_active.png",
+                "text": "订单"
+            },
+            {
+                "iconPath": "images/self.png",
+                "pagePath": "pages/self/self",
+                "selectedIconPath": "images/self_active.png",
+                "text": "我的"
+            }
+        ]
+    },
+    "usingComponents": {
+        "van-image": "./components/vant-weapp/dist/image/index",
+        "van-icon": "./components/vant-weapp/dist/icon/index",
+        "navigation-bar":"./selfDefineComponent/navigationBar/navigationBar",
+        "select":"./selfDefineComponent/select/select",
+        "van-grid": "./components/vant-weapp/dist/grid/index",
+        "van-grid-item": "./components/vant-weapp/dist/grid-item/index",
+        "van-cell": "./components/vant-weapp/dist/cell/index",
+        "van-button": "./components/vant-weapp/dist/button/index",
+        "van-field": "./components/vant-weapp/dist/field/index",
+        "van-action-sheet": "./components/vant-weapp/dist/action-sheet/index",
+        "van-calendar": "./components/vant-weapp/dist/calendar/index"
+    },
+    "sitemapLocation": "sitemap.json"
+}

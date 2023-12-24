@@ -1,0 +1,23 @@
+<view class="anewBindPhone">
+    <navigation-bar title="重新绑定"></navigation-bar>
+    <view style="height: {{spaceHardOverflow}};"></view>
+
+    <view>
+        <van-cell-group>
+            <van-field model:value="{{ phone }}" center clearable label="手机号码" placeholder="请输入新手机号码" border="{{ false }}" use-button-slot>
+                <van-button round slot="button" bindtap="captcha" size="normal" color="#58a4b4">
+                    {{captchaStatus?time+"秒":"发生验证码"}}
+                </van-button>
+            </van-field>
+        </van-cell-group>
+    </view>
+    <view>
+        <van-cell-group>
+            <van-field model:value="{{ captchaValueInput }}" clearable label="验证码" placeholder="请输入短信验证码" border="{{ false }}" />
+        </van-cell-group>
+    </view>
+
+
+
+    <view class="submit" bindtap="onSubmit">提交</view>
+</view>

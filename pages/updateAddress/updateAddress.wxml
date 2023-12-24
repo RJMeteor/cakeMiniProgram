@@ -1,0 +1,33 @@
+<view class="updateAddress">
+    <navigation-bar title="{{type==='update'?'编辑收获地址':'添加收货地址'}}"></navigation-bar>
+    <view style="height: {{spaceHardOverflow}};"></view>
+
+    <van-field
+    model:value="{{ username }}"
+    label="联  系  人"
+    placeholder="请输入联系人"
+    border="{{ false }}"
+  />
+  <van-field
+    model:value="{{ phone }}"
+    label="联系电话"
+    placeholder="联系电话"
+    border="{{ false }}"
+  />
+ 
+    <van-field
+    model:value="{{ addressText }}"
+    label="所在地址"
+    placeholder="天河区同乐叶荣耀"
+    right-icon="arrow"
+    border="{{ false }}"
+  />
+    <van-field
+    model:value="{{ houseNumber }}"
+    label="门  牌  号"
+    placeholder="如5号楼203室"
+    border="{{ false }}"
+  />
+
+    <view class="submit" bindtap="{{type==='update'?'update':'insert'}}">{{type==="update"?"保存":"添加"}}</view>
+</view>

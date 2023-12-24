@@ -1,0 +1,42 @@
+<view class="detailedInformation">
+    <navigation-bar title="我的" />
+    <view style="height: {{spaceHardOverflow}};"></view>
+
+    <view class="cellViewBorder">
+        <view style="display: flex;padding: 13rpx 30rpx ;justify-content: space-between;align-items: center;" bindtap="chooseMedia">
+            <text style="font-size: 26rpx;color: #333;">头像</text>
+            <view style="display: flex;align-items: center;">
+                <image style="width: 60rpx;height: 60rpx;border-radius: 50%;margin-right: 8rpx;" src="{{regitstry.avatarImage}}" mode="aspectFill"/>
+                <van-icon name="arrow" />
+            </view>
+        </view>
+        <!-- <van-cell-group>
+            <van-cell title="头像" icon="{{regitstry.avatarImage}}" is-link value="{{regitstry.avatarImage}}" />
+        </van-cell-group> -->
+    </view>
+    <view class="cellViewBorder" bindtap="doRename">
+        <van-cell-group>
+            <van-cell title="昵称" is-link value="{{regitstry.username}}" />
+        </van-cell-group>
+    </view>
+    <view class="cellViewBorder">
+        <van-cell-group>
+            <van-cell title="性别" is-link bindtap="changeSex" value="{{regitstry.sex}}" />
+        </van-cell-group>
+    </view>
+    <view class="cellViewBorder" bindtap="changeBirthdayTime">
+        <van-cell-group>
+            <van-cell title="生日" value="{{regitstry.birthdayTime}}" />
+        </van-cell-group>
+    </view>
+
+    <view class="cellViewBorder" bindtap="doUpdatePassword">
+        <van-cell-group>
+            <van-cell title="修改密码" is-link value="{{regitstry.password}}" />
+        </van-cell-group>
+    </view>
+
+    <van-action-sheet show="{{ sheetShow }}" actions="{{ sheetActions }}" bind:close="onCloseSheet" bind:select="onSelectSheet" description="请选择性别" />
+
+    <van-calendar show="{{ calendarShow }}" bind:close="onCloseCalendar" bind:confirm="onConfirmCalendar" />
+</view>

@@ -1,0 +1,26 @@
+<view class="intgralCentre">
+    <navigation-bar title="积分商城"></navigation-bar>
+    <view style="height: {{spaceHardOverflow}};"></view>
+    <view class="tapType" bindtap="classify">
+        <scroll-view class="scroll-view-y" scroll-x="{{true}}">
+            <view class="type" data-type="classify">
+            全部
+            </view>
+            <view class="type" data-type="{{item}}" wx:for="{{commodityType}}" wx:key="index">
+                {{item}}
+            </view>
+        </scroll-view>
+    </view>  
+    <view class="shop"  style="width: {{scrennWidth/2-30}}px;" wx:for="{{commodity}}" bindtap="navigationProductDetails" data-commodityuuid="{{item.commodityUUID}}" wx:key="index">
+        <image style="width: {{scrennWidth/2-30}}px;height: 350rpx;" src="{{item.commodityImages[0]}}" mode="aspectFill"></image>
+        <view>
+            <text>{{item.title}}</text>
+            <text>会员优惠价</text>
+            <view>
+                <text>￥{{item.preferentialPrice}}</text>
+                <text>￥{{item.price}}</text>
+            </view>
+        </view>
+        <view class="purchase">{{item.exchange}}积分兑换</view>
+    </view>
+</view>

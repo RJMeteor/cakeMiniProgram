@@ -1,0 +1,27 @@
+page {
+    background-color: #ffffff;
+}
+
+.selfMember {
+    overflow: hidden;
+}
+
+.privilege {
+    border-top: 1rpx #ccc solid;
+    padding: 30rpx;
+    box-sizing: border-box;
+    width: 100%;
+    color: #999999;
+    font-size: 30rpx;
+    letter-spacing: 2rpx;
+    line-height: 40rpx;
+}
+
+.privilege.index {
+    font-size: 36rpx;
+    letter-spacing: 2rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333333;
+}

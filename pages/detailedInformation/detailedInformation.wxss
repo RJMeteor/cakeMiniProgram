@@ -1,0 +1,9 @@
+page{
+    background-color: #ffffff;
+}
+.detailedInformation{
+    overflow: hidden;
+}
+.cellViewBorder{
+    border: 2rpx solid #cccccc;
+}

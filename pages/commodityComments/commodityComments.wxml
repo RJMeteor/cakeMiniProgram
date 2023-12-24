@@ -1,0 +1,56 @@
+<view class="commodityComments">
+    <navigation-bar title="全部评论"></navigation-bar>
+    <view style="height: {{spaceHardOverflow}};"></view>
+
+    <view class="body">
+        <view class="count">
+            吃货评论（{{commodity.comments.length}}）
+        </view>
+        <view class="commentsTags" style="display: flex;">
+            <view wx:for="{{commodity.commentsLables}}" wx:key="index"> {{item}}</view>
+        </view>
+        <!-- 评论展示区 commentsBody 元素-->
+        <view class="commentsBody" wx:for="{{commodity.comments}}" wx:key="index">
+            <view style="height: 120rpx;width: 120rpx; margin: 0;padding: 0;">
+                <image style="height: 120rpx;width: 120rpx;" src="{{item.regitsory.avatarImage}}" mode="aspectFit" />
+            </view>
+            <view style="word-break: break-all;">
+                <view>
+                    <text>{{item.regitsory.username}}</text>
+                    <text>{{item.commentsTime}}</text>
+                </view>
+                <view>
+                    <view>
+                        {{item.commentsContent}}
+                    </view>
+                    <view bindtap="previewImages">
+                        <!-- 图片展示区· -->
+                        <image style="width: 150rpx;height: 150rpx;" wx:for="{{item.commentsImages}}" wx:key="imageIndex" data-commentindex="{{index}}" data-imageindex="{{imageIndex}}" wx:for-index="imageIndex" wx:for-item="imageItem" src="{{imageItem}}" mode="aspectFill" />
+                    </view>
+                </view>
+                <view class="business">
+                    {{item.businessContent.commentsContent}}
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="bottomCommentShift">
+        <image style="height:23rpx;width:80rpx;" src="../../images/null.png" mode="aspectFill" />
+        <text>已经到底了哦，快去评论吧！</text>
+    </view>
+
+    <!-- 
+    <view class="submit" >
+    <view>
+        <van-icon name="shopping-cart" color="#58a4b4" info="1" size="40rpx"/>
+        购物车
+    </view>
+    <view bindtap="addCars">
+        加入购物车
+    </view>
+    <view>
+        立即购买
+    </view>
+    </view> -->
+</view>

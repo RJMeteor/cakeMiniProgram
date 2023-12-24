@@ -1,0 +1,235 @@
+page {
+    background-color: #ffffff;
+}
+
+.selfCars {
+    overflow: hidden;
+}
+
+.nullCars {
+    margin-top: 400rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nullCars text {
+    margin: 22rpx 0rpx;
+    color: #cccccc;
+}
+
+.nullCars view {
+    height: 60rpx;
+    width: 175rpx;
+    background-color: #58a4b4;
+    border-radius: 30rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    margin-top: 10rpx;
+}
+
+.carsActive {
+    border-bottom: 2rpx solid #cccccc;
+    padding: 30rpx;
+    display: flex;
+}
+
+.selectActiveHard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selectActiveHard text {
+    margin-left: 15rpx;
+}
+
+.selectHard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30rpx;
+    font-size: 30rpx;
+    line-height: 34rpx;
+    color: #ffffff;
+    background-color: #77b4c1;
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 3rpx;
+}
+
+.selectActiveHard>view {
+    width: 40rpx;
+    height: 40rpx;
+    border: 4rpx solid #fff;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.selectActiveHard>view view {
+    width: 27rpx;
+    height: 27rpx;
+    background-color: #ffffff;
+    border-radius: 100%;
+}
+
+.selectActive {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 70rpx;
+    height: 160rpx;
+
+}
+
+.selectActive>view {
+    width: 40rpx;
+    height: 40rpx;
+    border: 4rpx solid #8ec1cc;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selectActive>view view {
+    width: 27rpx;
+    height: 27rpx;
+    background-color: #58a4b4;
+    border-radius: 100%;
+}
+
+.carsShopinfo {
+    display: flex;
+    font-size: 30rpx;
+    line-height: 40rpx;
+    color: #333333;
+    flex-wrap: wrap;
+    padding: 34rpx auto;
+    align-items: center;
+    flex: 1;
+}
+
+
+.carsShopinfo>view {
+    flex: 1;
+}
+
+.carsShopinfo>view>view {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.carsShopinfo>view>view:nth-of-type(2) {
+    color: #999999;
+}
+
+.carsShopinfo>view>view:nth-of-type(3) text:nth-of-type(1) {
+    color: #999999;
+}
+
+.carsShopinfo .paddingExtra {
+    padding-left: 30rpx;
+}
+
+.editView {
+    display: flex;
+    height: 100%;
+    box-sizing: border-box;
+
+}
+
+.editView>view:nth-of-type(1) {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+}
+
+.editView>view:nth-of-type(1)>view:nth-of-type(1) {
+    display: flex;
+    justify-content: center;
+}
+
+.editView>view:nth-of-type(1)>view:nth-of-type(1)>view:nth-of-type(1),
+.editView>view:nth-of-type(1)>view:nth-of-type(1)>view:nth-of-type(3) {
+    height: 59rpx;
+    width: 59rpx;
+    border: 1rpx solid #cccccc;
+    display: flex;
+    justify-content: center;
+    margin: 0rpx 10rpx;
+    border-radius: 15rpx;
+}
+
+.editView>view:nth-of-type(1)>view:nth-of-type(1)>view:nth-of-type(2) {
+    width: 130rpx;
+    height: 59rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1rpx solid #cccccc;
+    border-radius: 15rpx;
+}
+
+.editView>view:nth-of-type(1)>view:nth-of-type(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.editView>view:nth-of-type(2) {
+    height: 100%;
+    border-radius: 15rpx;
+    width: 120rpx;
+    background-color: #58a4b4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff !important;
+    font-size: 30rpx;
+    line-height: 12rpx;
+}
+
+.submit {
+    width: 100%;
+    background-color: #58a4b4;
+    font-size: 30rpx;
+    line-height: 30rpx;
+    color: #ffffff;
+    height: 100rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.submit>view {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit>view:nth-of-type(1) {
+    flex: 2;
+    background-color: #ffffff;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.submit>view:nth-of-type(2) {
+    flex: 1.3;
+}

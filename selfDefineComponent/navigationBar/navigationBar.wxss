@@ -1,0 +1,45 @@
+
+.navigation,
+.statusBar,
+.navigationBar {
+    width: 100%;
+    background-color: var(--bar-color);
+}
+.navigation{
+    position: fixed;
+    z-index: 1000;
+}
+.navigationBar {
+    display: flex;
+}
+
+.icon,
+.content {
+    height: 100%;
+}
+
+.icon {
+    width: 100rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.iconClose::after {
+    content: "";
+    width: 0.2px;
+    height: 40rpx;
+    background-color: var(--icon-color);
+    position: absolute;
+    left: 100rpx;
+}
+
+.content {
+    font-size: 30rpx;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}

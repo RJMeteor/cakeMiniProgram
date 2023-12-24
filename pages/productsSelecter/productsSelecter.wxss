@@ -1,0 +1,118 @@
+page {
+    background-color: #ffffff;
+}
+
+.productsSelecter {
+    overflow: hidden;
+}
+
+
+.submit {
+    width: 100%;
+    background-color: #58a4b4;
+    font-size: 36rpx;
+    line-height: 36rpx;
+    color: #ffffff;
+    height: 100rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+}
+
+.productsSelecter>view:nth-of-type(2) {
+    height: 40rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30rpx;
+    font-size: 32rpx;
+    line-height: 32rpx;
+    color: #333333;
+}
+
+.productsSelecter>view:nth-of-type(2)>text:last-child {
+    font-size: 32rpx;
+    line-height: 12rpx;
+    color: #58a4b4;
+}
+
+.productsSelecter>view:nth-of-type(3) {
+    padding: 0rpx 30rpx;
+}
+
+.productsSelecter>view:nth-of-type(3)>view:first-child,
+.productsSelecter>view:nth-of-type(4)>view:first-child {
+    height: 94rpx;
+    font-size: 32rpx;
+    letter-spacing: 0rpx;
+    display: flex;
+    align-items: center;
+    line-height: 32rpx;
+    color: #333333;
+}
+
+.productsSelecter>view:nth-of-type(3)>view:last-child view,
+.productsSelecter>view:nth-of-type(4)>view:last-child view {
+    width: 320rpx;
+    height: 60rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    border-radius: 6px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    margin-bottom: 20rpx;
+    font-size: 30rpx;
+    letter-spacing: 0rpx;
+    line-height: 30rpx;
+    color: #333333;
+}
+
+.productsSelecter>view:nth-of-type(3)>view:last-child view:nth-of-type(2n+1),
+.productsSelecter>view:nth-of-type(4)>view:last-child view:nth-of-type(2n+1) {
+    margin-right: 20rpx;
+}
+
+.productsSelecter>view:nth-of-type(3)>view:last-child view:nth-of-type(2n),
+.productsSelecter>view:nth-of-type(4)>view:last-child view:nth-of-type(2n) {
+    margin-left: 20rpx;
+}
+
+.productsSelecter>view:nth-of-type(4) {
+    clear: both;
+    padding: 0rpx 30rpx;
+}
+
+.productsSelecter>view:nth-of-type(5) {
+    clear: both;
+    padding: 30rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 123rpx;
+    border-top: 1rpx #cccccc solid;
+}
+
+.productsSelecter>view:nth-of-type(5)>view:last-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 32rpx;
+    letter-spacing: 0rpx;
+    line-height: 30rpx;
+    color: #333333;
+}
+
+.productsSelecter>view:nth-of-type(5)>view:last-child {
+    width: 205rpx;
+    height: 70rpx;
+    border-radius: 6px;
+    background-color: #ffffff;
+    border: 1rpx solid #cccccc;
+    font-size: 40rpx;
+    display: flex;
+    justify-content: space-around;
+}

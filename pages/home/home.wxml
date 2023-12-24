@@ -1,0 +1,58 @@
+<view class="home">
+    <navigation-bar close="{{false}}" title="屿蓝朵蛋糕"></navigation-bar>
+    <view style="height: {{spaceHardOverflow}};"></view>
+
+    <view class="giftView">
+        <view class="address">
+            <van-icon name="location-o" color="#9ac7d1" size="40rpx"></van-icon>
+            <text>{{commodityScreen.address}}</text>
+        </view>
+        <view>STRAWBERRY LOVE</view>
+        <view>
+            <view>
+                <view bindtap="navigationProductDetails" data-type="default"  data-commodityuuid="{{commodityScreen.commodityUUID}}">立即购买</view>
+            </view>
+            <view>
+               {{commodityScreen.description}}
+            </view>
+            <view>
+                {{commodityScreen.title}}
+            </view>
+        </view>
+        <view>
+            <swiper style="height:520rpx;width: 80vw;margin: 114rpx auto;" autoplay="{{true}}" circular="true" indicator-dots="true" indicator-color="#cccccc" indicator-active-color="#ffffff" >
+                <swiper-item  style="height:520rpx;width: 80vw;" wx:for="{{commodityScreen.commodityImages}}" wx:key="index">
+                    <image style="height:520rpx;width: 80vw;" src="{{item}}" mode="aspectFill"></image>
+                </swiper-item>
+            </swiper>
+            <!-- <image style="height:320rpx;width: 320rpx;" src="{{commodityScreen.commodityImages[0]}}" mode="aspectFill"></image> -->
+        </view>
+    </view>
+
+
+    <view class="tapType" bindtap="classify">
+        <scroll-view class="scroll-view-y"  scroll-x="{{true}}">
+            <view class="type" data-type="classify">
+            全部
+            </view>
+            <view class="type" data-type="{{item}}" wx:for="{{commodityType}}" wx:key="index">
+                {{item}}
+            </view>
+        </scroll-view>
+    </view>
+
+
+    
+    <!-- <view bindtap="navigationProductDetails"  class="shop" style="width: {{scrennWidth/2-30}}px;" wx:for="{{commodity}}" wx:key="index" data-type="default" data-commodityuuid="{{item.commodityUUID}}">
+        <image style="width: {{scrennWidth/2-30}}px;"   src="{{item.commodityImages[0]}}" mode="aspectFill"></image>
+        <view>{{item.title}}</view>
+        <view>￥{{item.price}}</view>
+    </view> -->
+    <!-- <view style="column-count: 2"> -->
+        <view  bindtap="navigationProductDetails"  class="shop" style="width: {{scrennWidth/2-30}}" wx:for="{{commodity}}" wx:key="index"  data-commodityuuid="{{item.commodityUUID}}">
+        <image style="width: {{scrennWidth/2-30}}px;height: 350rpx;"   src="{{item.commodityImages[0]}}" mode="aspectFill"></image>
+        <view>{{item.title}}</view>
+        <view>￥{{item.price}}</view>
+    </view>
+    <!-- </view> -->
+</view>

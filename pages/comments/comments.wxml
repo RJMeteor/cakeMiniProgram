@@ -1,0 +1,29 @@
+<!--pages/comments/comments.wxml-->
+<view class="comments">
+    <navigation-bar title="评论"></navigation-bar>
+    <view style="height: {{spaceHardOverflow}};"></view>
+    <view wx:for="{{orders.shoppingCarts}}" wx:key="index" class="orderInfo">
+        <view>
+            <image style="width: 160rpx;height: 160rpx;border-radius: 15rpx;" src="{{item.commodity.commodityImages[0]}}" />
+            <view>
+                <view>
+                    <text>{{item.commodity.title}}</text>
+                    <!-- <text>{{item.commodity.price}}</text> -->
+                    <text>{{item.type==="default"?"￥"+item.commodity.price:item.type==="member"?"￥"+item.commodity.preferentialPrice:item.commodity.exchange+"积分"}}</text>
+                </view>
+                <view>
+                    {{item.selectSpecificationActive}}
+                </view>
+                <view>
+                    <text>{{item.otherSelectSpecificationActive}}</text>
+                    <text>X {{item.count}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <textarea style="width: 95vw;margin: 30rpx;" model:value="{{commentsContent}}" bindinput="onChange" placeholder="喜欢我们的产品吗？留下您的评论会对我们很有帮 助哦~" auto-height="true" maxlength="-1"></textarea>
+
+    <image style="width: 183rpx;height: 183rpx;margin:0rpx 30rpx;" wx:for="{{commentsImages}}" src="{{item}}" wx:key="index" mode="aspectFill"/>
+    <image style="width: 183rpx;height: 183rpx;margin:0rpx 30rpx;" bindtap="chooseMedia" src="../../images/addImages.png" mode="aspectFill"/>
+        <view class="submit" bindtap="doSubmit">提交</view>
+    </view>

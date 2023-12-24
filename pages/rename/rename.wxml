@@ -1,0 +1,14 @@
+<view class="rename">
+    <navigation-bar title="修改昵称" />
+    <view style="height: {{spaceHardOverflow}};"></view>
+
+    <view class="renameView">
+        <view>
+            昵称
+        </view>
+        <view><input model:value="{{username}}" bindinput="onChange"   placeholder="请输入新的昵称" /></view>
+        <view><image bindtap="clearInput" style="height:53rpx ;width:53rpx ;" src="../../images/close.png" mode="aspectFill"></image></view>
+    </view>
+
+    <view class="submit" bindtap="doSubmit">保存</view>
+</view>

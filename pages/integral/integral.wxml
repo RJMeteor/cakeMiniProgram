@@ -1,0 +1,30 @@
+<view class="integral">
+    <navigation-bar title="积分"></navigation-bar>
+    <view style="height: {{spaceHardOverflow}};"></view>
+
+    <view class="integralView">
+        <view>
+            我的积分：{{0+regitstry.integral}}
+        </view>
+    </view>
+
+    <view class="comsume" wx:for="{{regitstry.consumptionRecords}}" wx:key="index">
+        <view>
+            <image style="width: 84rpx;height: 84rpx;" src="../../images/consume.png" mode="aspectFill" />
+        </view>
+        <view>
+            <view>
+                消费
+            </view>
+            <view>
+                <text>{{item.consumptionTime}}</text>
+                <text> 获得{{item.obtainIntegral}}积分</text>
+            </view>
+        </view>
+        <view>
+            {{item.spendAmount}}
+        </view>
+    </view>
+
+
+</view>

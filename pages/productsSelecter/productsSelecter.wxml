@@ -1,0 +1,50 @@
+<view class="productsSelecter">
+    <navigation-bar title="产品详情 "></navigation-bar>
+    <view style="height: {{spaceHardOverflow}};"></view>
+    
+    <image style="height: 320rpx;width: 100vw;" src="{{commodity.commodityImages[0]}}" mode="aspectFill"/>
+    
+    <view>
+        <text>产品名称：{{commodity.title}}</text>
+        <!-- <text>价格：￥{{commodity.price}}</text> -->
+        <text> {{active==="default"?"价格：￥"+commodity.price:active==="member"?"价格：￥"+commodity.preferentialPrice:"积分 "+commodity.exchange}}</text>
+    </view>
+    <view>
+        <view>
+            规格
+        </view>
+        <view bindtap="selectSpecification">
+            <view wx:for="{{commodity.selectSpecification}}" data-specification="{{index}}" style="{{specification==index?'background-color: #f5f5f5;':'background-color: #ffffff;'}}" wx:key="index">
+               {{item}}
+            </view>
+        </view>
+    </view>
+    <view>
+        <view>
+            其他
+        </view>
+        <view bindtap="selectOther">
+            <view wx:for="{{commodity.otherSelectSpecification}}" data-other="{{index}}" style="{{other==index?'background-color: #f5f5f5;':'background-color: #ffffff;'}}"  wx:key="index">
+               {{item}}
+            </view>
+        </view>
+    </view>
+    <view>
+        <view>
+            购买数量
+        </view>
+        <view>
+            <view bindtap="deleteCount">
+                -
+            </view>
+            <view>
+                {{count}}
+            </view>
+            <view bindtap="addCount">
+                +
+            </view>
+        </view>
+    </view>
+    <view style="background-color: #5f5d5d;color: #fff;" class="submit" wx:if="{{commodity.commodityCount <= 0}}">没有库存了！！！</view>
+    <view class="submit"  bindtap="{{type==='addCars'?'addCars':'purchase'}}" wx:else>{{type==='addCars'?"加入购物车":"购买"}}</view>
+</view>

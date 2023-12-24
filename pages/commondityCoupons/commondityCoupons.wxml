@@ -1,0 +1,53 @@
+<wxs module="judgment" src="../../wxsUtil/judgment.wxs"></wxs>
+<view class="commondityCoupons">
+    <navigation-bar title="产品详情"></navigation-bar>
+    <view style="height: {{spaceHardOverflow}};"></view>
+    <swiper indicator-dots="true" indicator-color="#cccccc" indicator-active-color="#ffffff" autoplay="true" circular="true">
+        <swiper-item wx:for="{{commodity.commodityImages}}" wx:key="index">
+            <image style="width: 100vw;height: 500rpx;" src="{{item}}" mode="aspectFill" />
+        </swiper-item>
+        <!-- <swiper-item>
+            <image style="width: 100vw;height: 500rpx;" src="../../images/cake.jpg" mode="aspectFill" />
+        </swiper-item>
+        <swiper-item>
+            <image style="width: 100vw;height: 500rpx;" src="../../images/cake.jpg" mode="aspectFill" />
+        </swiper-item> -->
+    </swiper>
+
+    
+
+    <view class="couponsCard" style="height: 0;padding: 0;margin: 0;"></view>
+    <view class="couponsCard" wx:for="{{commodity.coupon}}" wx:key="index">
+        <image style="width: 100%;height: 100%;" src="../../images/coupons.png" />
+        <view class="information">
+            <view>
+                ￥ {{item.preferentialPrice}}
+            </view>
+            <view>
+                <view>
+                    优惠券
+                </view>
+                <view>
+                    规则满{{item.rangePrice}}优惠
+                </view>
+                <view>
+                    <!-- 有效期 -->
+                    {{item.validityPeriod}}
+                </view>
+            </view>
+            <view wx:if="{{judgment.includesFlge(item.couponRegitstryUUIDActive,regitstryUUID)}}" style="background-color: #f5f5f5;color: #333;">
+                已使用
+            </view>
+            <view bindtap="doActive" data-couponsindex="{{index}}" wx:elif="{{judgment.includesFlge(item.couponRegitstryUUIDReceive,regitstryUUID)}}">
+                已领取
+            </view>
+            <view bindtap="doReceive" data-couponsindex="{{index}}" wx:else>
+                立即领取
+            </view>
+        </view>
+    </view>
+
+
+    <view class="bottomWait">领取成功，快去使用吧~</view>
+    <!-- <view class="submit" bindtap="doSubmit">完成</view> -->
+</view>

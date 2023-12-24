@@ -1,0 +1,35 @@
+page {
+    background-color: #ffffff;
+}
+
+.relieveBindPhone {
+    overflow: hidden;
+}
+
+.submit {
+    width: 100%;
+    background-color: #58a4b4;
+    font-size: 36rpx;
+    line-height: 36rpx;
+    color: #ffffff;
+    height: 100rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.dobindphone {
+    height: 110rpx;
+    width: 100%;
+    font-size: 32rpx;
+    color: #333333;
+    display: flex;
+    align-items: center;
+    padding-left:36rpx;
+    border-bottom: 2rpx solid #ccc;
+}
+.dobindphone+view{
+     border-bottom: 2rpx solid #ccc;
+}

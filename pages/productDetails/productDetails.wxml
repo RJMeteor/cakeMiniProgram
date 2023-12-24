@@ -1,0 +1,134 @@
+<wxs module="judgment" src="../../wxsUtil/judgment.wxs"></wxs>
+<view class="productDetails">
+    <navigation-bar title="产品详情"></navigation-bar>
+    <view style="height: {{spaceHardOverflow}};"></view>
+    <swiper indicator-dots="true" bindtap="previewImageIndex" indicator-color="#cccccc" indicator-active-color="#ffffff" autoplay="true" circular="true">
+        <swiper-item wx:for="{{commodity.commodityImages}}" wx:key="index">
+            <image style="width: 100vw;height: 500rpx;" src="{{item}}" data-imageindex="{{index}}" mode="aspectFill" />
+        </swiper-item>
+        <!-- <swiper-item>
+            <image style="width: 100vw;height: 500rpx;" src="../../images/cake.jpg" mode="aspectFill" />
+        </swiper-item>
+        <swiper-item>
+            <image style="width: 100vw;height: 500rpx;" src="../../images/cake.jpg" mode="aspectFill" />
+        </swiper-item> -->
+    </swiper>
+
+    <view>
+        <text>产品名称：{{commodity.title}}</text>
+        <!-- <text>价格：￥{{commodity.price}}</text> -->
+        <text> {{active==="default"?"价格：￥"+commodity.price:active==="member"?"价格：￥"+commodity.preferentialPrice:"积分 "+commodity.exchange}}</text>
+    </view>
+    <van-cell title="选择规格：{{commodity.selectSpecification[0]}}" data-commodityuuid="{{commodity.commodityUUID}}" bindtap="navigationProductsSelecter" is-link />
+    <van-cell title="{{commodity.coupon[0].preferentialPrice}}元优惠劵{{judgment.includesFlge(commodity.coupon[0].couponRegitstryUUIDReceive,RegitstryUUID)?'已':'等待'}}领取" bindtap="navigationCommondityCoupons" data-commodityuuid="{{commodity.commodityUUID}}" is-link />
+
+    <view class="delimiter">
+        <view>
+
+        </view>
+        <view>
+            评论
+        </view>
+        <view>
+
+        </view>
+    </view>
+
+    <view class="body">
+        <view class="count">
+            吃货评论（{{commodity.comments.length}}）
+        </view>
+        <view class="commentsTags" style="display: flex;">
+            <!-- <view > 包装好看</view> -->
+            <view wx:for="{{commodity.commentsLables}}" wx:key="index">{{item}}</view>
+        </view>
+        <!-- 评论展示区 commentsBody 元素-->
+        <view class="commentsBody">
+            <view style="height: 120rpx;width: 120rpx; margin: 0;padding: 0;">
+                <image style="height: 120rpx;width: 120rpx;" src="{{commodity.comments[0].regitsory.avatarImage}}" mode="aspectFit" />
+            </view>
+            <view style="word-break: break-all;">
+                <view>
+                    <text>{{commodity.comments[0].regitsory.username}}</text>
+                    <text>{{commodity.comments[0].commentsTime}}</text>
+                </view>
+                <view >
+                    <view>
+                        <!-- 女朋友很喜欢，说很好吃，下次还要再买，太 好了。 -->
+                        {{commodity.comments[0].commentsContent}}
+                    </view>
+                    <view>
+                        <!-- 图片展示区· -->
+                        <image style="width: 150rpx;height: 150rpx;" wx:for="{{commodity.comments[0].commentsImages}}" wx:for-index="imageIndex" wx:for-item="imageEle" src="{{imageEle}}" mode="aspectFill" wx:key="imageIndex" />
+                    </view>
+                </view>
+                <view class="business">
+                    <!-- 掌柜回复：感谢您能喜欢，我们还有更多样 式哦，期待您的再次光临。 -->
+                    {{commodity.comments[0].businessContent.commentsContent}}
+                </view>
+            </view>
+        </view>
+        <view>
+            <view bindtap="navigationCommondityComments" data-commodityuuid="{{commodity.commodityUUID}}">
+                查看全部评论
+            </view>
+        </view>
+    </view>
+
+
+    <view class="delimiter">
+        <view>
+
+        </view>
+        <view>
+            介绍详情
+        </view>
+        <view>
+
+        </view>
+    </view>
+
+    <view class="information">
+        <!-- 海洋的风味~清新的浪漫回忆 -->
+        {{commodity.commodityExplain.remark}}
+    </view>
+    <view>
+        <view>
+            <text>口 味：</text>
+            <text>{{commodity.commodityExplain.taste}}</text>
+        </view>
+        <view>
+            <text>甜 度：</text>
+            <text>{{commodity.commodityExplain.sweetness}}</text>
+        </view>
+        <view>
+            <text>适合人群：</text>
+            <text>{{commodity.commodityExplain.suitablePeople}}</text>
+        </view>
+        <view>
+            <text>保鲜时限：</text>
+            <text>{{commodity.commodityExplain.keepFreshTime}}</text>
+        </view>
+        <view>
+            <text>原 材 料：</text>
+            <text>{{commodity.commodityExplain.originalMaterial}}</text>
+        </view>
+    </view>
+
+    <view>
+        <!-- 详情页 -->
+    </view>
+
+    <view class="submit">
+        <view bindtap="navigationSelfCars">
+            <van-icon name="shopping-cart" color="#58a4b4" info="{{carsLength}}" size="40rpx" />
+            购物车
+        </view>
+        <view bindtap="addCars" data-commodityuuid="{{commodity.commodityUUID}}">
+            加入购物车
+        </view>
+        <view bindtap="purchase" data-commodityuuid="{{commodity.commodityUUID}}">
+            立即购买
+        </view>
+    </view>
+</view>

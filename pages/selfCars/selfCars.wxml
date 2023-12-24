@@ -1,0 +1,77 @@
+<wxs module="judgment" src="../../wxsUtil/judgment.wxs"></wxs>
+<view class="selfCars">
+    <navigation-bar title="购物车" />
+    <view style="height: {{spaceHardOverflow}};"></view>
+    <view class="nullCars" wx:if="{{!cars.length}}">
+        <image style="height:180rpx;width:180rpx" src="../../images/nullcats.png" mode="aspectFill"></image>
+        <text>购物车空空如也~</text>
+        <view bindtap="navigatinHome">去逛逛</view>
+    </view>
+    <view wx:else>
+        <view class="selectHard">
+            <view class="selectActiveHard" bindtap="allSelect">
+                <view>
+                  <view style="{{allSelect?'background-color:#fff;':'background-color:#8ec1cc;'}}"></view>
+                </view><text>全部</text>
+            </view>
+            <text bindtap="editEvent">{{editText}}</text>
+        </view>
+
+        <view style="height: 108rpx;"></view>
+        <view class="carsActive" wx:for="{{cars}}" wx:key="index">
+            <view class="selectActive" bindtap="selectSelfCars" data-selfindex="{{index}}">
+                <view>
+                <view style="{{judgment.includesFlge(selectCarsIndex,index)?'background-color:#8ec1cc;':'background-color:#fff;'}}"></view>
+                </view>
+            </view>
+            <view class="carsShopinfo">
+                <image style="width: 160rpx;height: 160rpx;border-radius: 15rpx;" src="{{item.commodity.commodityImages[0]}}" />
+                <view class="paddingExtra" wx:if="{{showEdit}}">
+                    <view>
+                        <text>{{item.commodity.title}}</text>
+                        <text>
+                        {{item.type === "default"?("￥"+item.commodity.price):(item.type==="member"?("￥"+item.commodity.preferentialPrice):item.commodity.exchange+"积分")}}
+                        </text>
+                        <!-- <text>￥{{item.commodity.price}}</text> -->
+                    </view>
+                    <view>
+                        {{item.selectSpecificationActive}}
+                    </view>
+                    <view>
+                        <text>{{item.otherSelectSpecificationActive}}</text>
+                        <text>X {{item.count}}</text>
+                    </view>
+                </view>
+
+                <view class="editView" wx:else>
+                    <view>
+                        <view>
+                            <view bindtap="deleteCount" data-newcount="{{item.commodity.commodityCount}}"  data-oldcount="{{item.count}}" data-index="{{index}}">
+                                <van-icon name="minus" color="#cccccc"/>
+                            </view>
+                            <view>
+                                {{item.count}}
+                            </view>
+                            <view bindtap="addCount" data-newcount="{{item.commodity.commodityCount}}"  data-oldcount="{{item.count}}" data-index="{{index}}">
+                                <van-icon name="plus" color="#cccccc"/>    
+                            </view>
+                        </view>
+                        <view>
+                            <select prop-array='{{item.commodity.selectSpecification}}' bind:changespecificationActive="changespecificationActive" prop-select="{{item.selectSpecificationActive}}" prop-index="{{index}}"></select>
+                        </view>
+                    </view>
+                    <view bindtap="deleteCars" data-deleteindex="{{index}}">
+                        删除
+                    </view>
+                </view>
+            </view>
+        </view>
+
+    </view>
+
+    <view class="submit" bindtap="onSubmit">
+    <view><text>合计：￥{{total}}</text><text>积分：{{integral}}</text></view>
+    <view bindtap="doSubmit">去结算</view>
+    </view>
+
+</view>

@@ -1,0 +1,51 @@
+page {
+    background-color: #ffffff;
+}
+
+.rename {
+    overflow: hidden;
+}
+
+.renameView {
+    width: 100%;
+    height: 120rpx;
+    border: 2rpx solid #cccccc;
+    font-size: 32rpx;
+    color: #333333;
+    display: flex;
+    justify-content: space-around;
+}
+
+.renameView>view {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.renameView>view:nth-of-type(1){
+    flex: 1;
+}
+
+.renameView>view:nth-of-type(2){
+    flex: 3;
+    justify-content: flex-start;
+}
+.renameView>view:nth-of-type(3){
+    flex: 1;
+}
+
+.submit {
+    width: 100%;
+    background-color: #58a4b4;
+    font-size: 36rpx;
+    line-height: 36rpx;
+    color: #ffffff;
+    height: 100rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+}
+
+

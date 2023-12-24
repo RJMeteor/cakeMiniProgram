@@ -1,0 +1,19 @@
+<view class="relieveBindPhone">
+    <navigation-bar title="解除绑定"></navigation-bar>
+    <view style="height: {{spaceHardOverflow}};"></view>
+
+    <view class="dobindphone">
+        已绑定手机号码：{{phone}}</view>
+    <view>
+        <van-cell-group>
+            <van-field model:value="{{ captchaInput }}" center clearable label="验证码" placeholder="请输入验证码" border="{{ false }}" use-button-slot>
+                <van-button round slot="button" bindtap="captcha" size="normal" color="#58a4b4">
+                    {{captchaStatus?time+"秒":"发生验证码"}}
+                </van-button>
+            </van-field>
+        </van-cell-group>
+    </view>
+
+
+    <view class="submit" bindtap="onSubmit">下一步</view>
+</view>

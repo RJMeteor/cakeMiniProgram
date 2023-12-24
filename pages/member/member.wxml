@@ -1,0 +1,17 @@
+<view class="member">
+    <navigation-bar close="{{false}}" title="会员专区" class="navigationBar" />
+    <view style="height: {{spaceHardOverflow}};"></view>
+    <view class="shop" bindtap="navigationProductDetails" data-commodityuuid="{{item.commodityUUID}}" style="width: {{scrennWidth/2-30}}px;" wx:for="{{commodity}}" wx:key="index">
+        <image style="width: {{scrennWidth/2-30}}px;height: 350rpx;" src="{{item.commodityImages[0]}}" mode="aspectFill"></image>
+        <view>
+            <text>{{item.title}}</text>
+            <text>会员优惠价</text>
+            <view>
+                <text>￥{{item.preferentialPrice}}</text>
+                <text>￥{{item.price}}</text>
+            </view>
+        </view>
+        <view class="purchase">购买</view>
+    </view>
+
+</view>

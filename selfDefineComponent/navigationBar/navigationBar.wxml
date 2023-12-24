@@ -1,0 +1,12 @@
+<view class="navigation">
+    <view class="statusBar" style="height:{{statusBarHeight}};"></view>
+    <view class="navigationBar" style="height:{{navgationBarHeight}};">
+        <view class="{{close?'icon iconClose':'icon'}}">
+            <van-icon name="cross" wx:if="{{close}}" bindtap="navagationBack" size="40rpx" color="white"></van-icon>
+        </view>
+        <view class="content">
+            {{title}}
+        </view>
+        <view class="spaceMenuButton" style="width: {{menuButtonWidth}};"></view>
+    </view>
+</view>

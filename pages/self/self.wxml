@@ -1,0 +1,56 @@
+<view class="self">
+    <navigation-bar close="{{false}}" title="我的" class="navigationBar" />
+
+    <!-- person information -->
+    <view class="titieArea" style="margin-top: {{spaceHardOverflow}};">
+        <view>
+            <view>
+                <van-image round width="157rpx" height="157rpx" fit="cover" src="{{regitstry.avatarImage}}" />
+                <view>
+                    <view><text>{{regitstry.username}}</text></view>
+                    <view>
+                        <van-button round size="small" color="#acd2da">会员</van-button>
+                    </view>
+                </view>
+            </view>
+            <view>
+                <van-icon bindtap="navigationDetailinformation" name="arrow" color="#b7d8df"></van-icon>
+            </view>
+        </view>
+    </view>
+
+    <!-- 优惠券 -->
+    <view class="couponsOrintegralContains">
+        <view class="coupons" bindtap="navigationCoupons">
+            <text>{{regitstry.coupon.length}}张</text>
+            <text>优惠卷</text>
+        </view>
+        <view class="integral" bindtap="navigationIntegral">
+            <text>{{0+regitstry.integral}}分</text>
+            <text>积分</text>
+        </view>
+    </view>
+
+    <van-cell is-link size="large" bindtap="navigetonPhonePage" title="手机号码" value="{{bindPhoneStatus?'已绑定':'未绑定'}}" />
+    <van-cell is-link size="large" bindtap="navigationSelfcarsPage" title="我的购物车"/>
+    <van-cell is-link size="large" bindtap="navigationInsertAddress" title="我的收获地址"/>
+    <van-cell is-link size="large" bindtap="navigationIntegralcentre" title="积分商城"/>
+    <van-cell is-link size="large" bindtap="navigationSelfMember" title="会员卡"/>
+    <van-cell is-link size="large" bindtap="navigatoionCommonissue" title="常见问题"/>
+
+    <view class="contact">
+        <view>
+            <text>客户电话：400-222-1111</text>
+        </view>
+        <view>
+            <text>服务时间：09:00 - 18:00</text>
+        </view>
+    </view>
+
+
+
+
+
+
+
+</view>

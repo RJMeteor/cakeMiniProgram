@@ -1,0 +1,53 @@
+<view class="order">
+    <navigation-bar close="{{false}}" title="我的订单"></navigation-bar>
+    <view style="height: {{spaceHardOverflow}};"></view>
+
+    <view class="classify">
+        <view bindtap="orderAll" class="{{active === 4?'ordersActive':''}}">
+            全部订单
+        </view>
+        <view bindtap="doReminder" class="{{active === 0?'ordersActive':''}}">
+            待付款
+        </view>
+        <view bindtap="doComment" class="{{active === 1?'ordersActive':''}}">
+            待评论
+        </view>
+    </view>
+
+    <view style="height: 100rpx;"></view>
+
+    <view wx:for="{{ordersStorage}}"  wx:key="index" class="orderInfo">
+        <view>
+            <text>订单号：{{item.ordersUUID}}</text>
+            <text>{{item.type==0?"未付款":item.type==2?"配送中":item.type==1?"未评论":"已完成"}}</text>
+        </view>
+        <!-- <view capture-bind:tap="{{item.type==1? 'navigationFinishOrders':''}}" wx:for="{{item.shoppingCarts}}" wx:for-item="ele" wx:for-index="eleIndex" wx:key="eleIndex"> -->
+            <!-- <view  wx:for="{{item.shoppingCarts}}" wx:for-item="ele" wx:for-index="eleIndex" wx:key="eleIndex"> -->
+                <view>
+            <image style="width: 160rpx;height: 160rpx;border-radius: 15rpx;" src="{{item.shoppingCarts[0].commodity.commodityImages[0]}}" />
+            <view>
+                <view>
+                    <text>{{item.shoppingCarts[0].commodity.title}}</text>
+                    <!-- <text>￥{{ele.commodity.price}}</text> -->
+                    <text> {{item.shoppingCarts[0].type==="default"?"￥"+item.shoppingCarts[0].commodity.price:item.shoppingCarts[0].type==="member"?"￥"+item.shoppingCarts[0].commodity.preferentialPrice:item.shoppingCarts[0].commodity.exchange+"积分 "}}</text>
+                </view>
+                <view>
+                    {{item.shoppingCarts[0].selectSpecificationActive}}
+                </view>
+                <view>
+                    <text>{{item.shoppingCarts[0].otherSelectSpecificationActive}}</text>
+                    <text>X {{item.shoppingCarts[0].count}}</text>
+                </view>
+            </view>
+        </view>
+        <view>
+            <text>合计：{{item.cost}}</text>
+            <!-- button -->
+            <view wx:if="{{item.type == 0}}" data-ordersuuid="{{item.ordersUUID}}" bindtap="cancelOrder">取消订单</view>
+            <view wx:if="{{item.type == 0}}" data-ordersuuid="{{item.ordersUUID}}" class="ordersActive" capture-catch:tap="navigationSubmitOrders">马上付款</view>
+            <view wx:if="{{item.type == 2}}" data-ordersuuid="{{item.ordersUUID}}" capture-catch:tap="navigationReminder">催单</view>
+            <view wx:if="{{item.type == 1}}" data-ordersuuid="{{item.ordersUUID}}" class="ordersActive" bindtap="navigationComments" data-commodityuuid="{{item.shoppingCarts[0].commodity.commodityUUID}}">马上评论</view>
+            <view wx:if="{{item.type == 3}}" bindtap="navigationCommondityComments"  data-commodityuuid="{{item.shoppingCarts[0].commodity.commodityUUID}}" data-ordersuuid="{{item.ordersUUID}}">查看评论</view>
+        </view>
+    </view>
+</view>

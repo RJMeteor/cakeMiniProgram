@@ -1,0 +1,6 @@
+function includesFlge(target,cover){
+    return target.indexOf(cover)>=0
+}
+module.exports = {
+    includesFlge:includesFlge
+}

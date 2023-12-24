@@ -1,0 +1,58 @@
+<view class="reminder">
+    <navigation-bar title="订单提交"></navigation-bar>
+    <view style="height: {{spaceHardOverflow}};"></view>
+      <view class="waring">
+       配送中   
+    </view>
+    <view class="address">
+        <view>
+            <image style="height: 73rpx;width: 73rpx;" src="../../images/location.png" mode="aspectFill"></image>
+        </view>
+       
+        <view>
+            <view>
+                {{regitstry.address[orders.adderssIndex].username}} {{regitstry.address[orders.adderssIndex].phone}}
+            </view>
+            <view>
+                {{regitstry.address[orders.adderssIndex].addressText}}{{regitstry.address[orders.adderssIndex].houseNumber}}
+            </view>
+        </view>
+        <view>
+            <!-- <van-icon name="arrow" size="40rpx"/> -->
+        </view>
+    </view>
+
+    <van-cell title="配送时间" is-link value="{{orders.distributionYMD}}" border="{{ false }}" />
+    <van-cell title="时  间  段" is-link value="{{orders.distributionTime}}" border="{{ false }}" />
+  
+    <view wx:for="{{orders.shoppingCarts}}" wx:key="index" class="orderInfo">
+        <view>
+            <image style="width: 160rpx;height: 160rpx;border-radius: 15rpx;" src="{{item.commodity.commodityImages[0]}}" />
+            <view>
+                <view>
+                    <text>{{item.commodity.title}}</text>
+                    <!-- <text>{{item.commodity.price}}</text> -->
+                    <text>{{item.type==="default"?"￥"+item.commodity.price:item.type==="member"?"￥"+item.commodity.preferentialPrice:"积分"+item.commodity.exchange}}</text>
+                </view>
+                <view>
+                    {{item.selectSpecificationActive}}
+                </view>
+                <view>
+                    <text>{{item.otherSelectSpecificationActive}}</text>
+                    <text>X{{item.count}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <van-cell title="留         言" value="{{orders.message}}" border="{{false}}" />
+    <van-cell title="优  惠  劵" value="{{0}}" border="{{true}}" />
+    <van-cell title="实付款" value="￥{{orders.cost}}" border="{{true}}" />
+    <view style="height: 123rpx;"></view>
+
+    <view class="submit" bindtap="doSubmit">
+        <view>
+          催单
+        </view>
+
+    </view>
+</view>

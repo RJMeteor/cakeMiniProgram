@@ -1,0 +1,6 @@
+<view class="commonIssue">
+    <navigation-bar title="常见问题"></navigation-bar>
+    <view style="height: {{spaceHardOverflow}};"></view>
+    <van-cell border="{{false}}" is-link size="large" title="常见问题" bindtap="navigationCommonIssueAnswer"/>
+    
+</view>

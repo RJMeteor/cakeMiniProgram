@@ -1,0 +1,58 @@
+<view class="finshOrders">
+    <navigation-bar title="订单提交"></navigation-bar>
+    <view style="height: {{spaceHardOverflow}};"></view>
+      <view class="waring">
+       已完成   
+    </view>
+    <view class="address">
+        <view>
+            <image style="height: 73rpx;width: 73rpx;" src="../../images/location.png" mode="aspectFill"></image>
+        </view>
+        <view>
+            <view>
+                陈小姐 1366669999
+            </view>
+            <view>
+                广东省广州市海珠区新港东路
+            </view>
+        </view>
+        <view>
+            <!-- <van-icon name="arrow" size="40rpx"/> -->
+        </view>
+    </view>
+
+    <van-cell title="配送时间" is-link value="2017-12-01" border="{{ false }}" />
+    <van-cell title="时  间  段" is-link value="14:00-17:00" border="{{ false }}" />
+  
+    <view wx:for="{{orders.order}}" wx:key="index" class="orderInfo">
+        <view>
+            <image style="width: 160rpx;height: 160rpx;border-radius: 15rpx;" src="{{item.orderImageUrl}}" />
+            <view>
+                <view>
+                    <text>{{item.title}}</text>
+                    <text>{{item.price}}</text>
+                </view>
+                <view>
+                    {{item.extraInformation}}
+                </view>
+                <view>
+                    <text>{{item.giveGift.title}}</text>
+                    <text>X{{item.giveGift.count}}</text>
+                </view>
+            </view>
+        </view>
+        <view>
+            <text>合计：{{item.cost}}</text>
+            <!-- button -->
+            <view wx:if="{{item.type=='nonPayment'}}">取消订单</view>
+            <view wx:if="{{item.type=='nonPayment'}}" class="ordersActive" bindtap="navigationSubmitOrders">马上付款</view>
+            <view wx:if="{{item.type=='reminders'}}" bindtap="navigationReminder">催单</view>
+            <view wx:if="{{item.type=='comment'}}" class="ordersActive" bindtap="navigationComments">马上评论</view>
+            <view wx:if="{{item.type=='doComment'}}">查看评论</view>
+        </view>
+    </view>
+    <van-cell title="留         言" value="多放点吃蛋糕的刀叉" border="{{true}}" />
+    <van-cell title="优  惠  劵" value="-10" border="{{true}}" />
+    <van-cell title="实付款" value="￥345" border="{{true}}" />
+    <view style="height: 123rpx;"></view>
+</view>

@@ -1,0 +1,17 @@
+<view class="selfMember">
+    <navigation-bar title="我的会员"></navigation-bar>
+    <view style="height: {{spaceHardOverflow}};"></view>
+    <view style="display: flex;justify-content: center;align-items: center;">
+        <image style=" padding:103rpx;width: 160rpx;height: 160rpx;" src="{{regitstry.avatarImage}}" mode="aspectFill"/>
+    </view>
+ 
+    <view class="privilege index">
+        会员特权
+    </view>
+    <view class="privilege">
+        会员特权  会员特权  会员特权  会员特权  会员特权  会员特权  会员特权  会员特权
+    </view>
+    <view class="privilege">
+        会员特权  会员特权  会员特权  会员特权  会员特权  会员特权  会员特权  会员特权
+    </view>
+</view>

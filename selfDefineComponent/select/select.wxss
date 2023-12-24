@@ -1,0 +1,62 @@
+.com-selectBox{
+    width: 263rpx;
+    height: 59rpx;
+    border-radius: 13rpx;
+    color: #333333;
+}
+.com-sContent{
+    border: 1px solid #e2e2e2;
+    background: white;
+    font-size: 16px;
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 13rpx;
+}
+.com-sImg{
+    position: absolute;
+    right: 20rpx;
+    top: 22rpx;
+    width: 32rpx;
+    height: 18rpx;
+    transition: all .3s ease;
+}
+.com-sTxt{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding:0 20rpx 0 6px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333333;
+}
+.com-sList{
+    background: white;
+    width: inherit;
+    position: absolute;
+    border: 1rpx solid #e2e2e2;
+    border-top: none;
+    box-sizing: border-box;
+    z-index: 3;
+    max-height: 120px;
+    overflow: auto;
+}
+.com-sItem{
+    height: 30px;
+    line-height: 30px;
+    border-top: 1rpx solid #e2e2e2;
+    padding: 0 6px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 27rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.com-sItem:first-child{
+    border-top: none;
+}

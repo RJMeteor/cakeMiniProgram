@@ -1,0 +1,64 @@
+<view class="submitOrders">
+    <navigation-bar title="订单提交"></navigation-bar>
+    <view style="height: {{spaceHardOverflow}};"></view>
+    <view class="address">
+        <view>
+            <image style="height: 73rpx;width: 73rpx;" src="../../images/location.png" mode="aspectFill"></image>
+        </view>
+        <view wx:if="{{orders.adderssIndex.length===0}}" bindtap="navagationInsetAddress">请选择收货地址</view>
+        <view bindtap="navagationInsetAddress" wx:else>
+            <view>
+                {{regitstry.address[orders.adderssIndex].username}} {{regitstry.address[orders.adderssIndex].phone}}
+            </view>
+            <view>
+                {{regitstry.address[orders.adderssIndex].addressText}}{{regitstry.address[orders.adderssIndex].houseNumber}}
+            </view>
+        </view>    
+        <view>
+            <van-icon name="arrow" size="40rpx"/>
+        </view>
+    </view>
+
+    <van-cell title="配送时间" is-link value="{{orders.distributionYMD}}"  border="{{ false }}" />
+    <van-cell title="时  间  段" is-link value="{{orders.distributionTime}}"  border="{{ false }}" />
+    <view class="waring">
+        温馨提示：提交订单后配送时间不可再修改
+    </view>
+    <view wx:for="{{orders.shoppingCarts}}" wx:key="index" class="orderInfo">
+        <view>
+            <image style="width: 160rpx;height: 160rpx;border-radius: 15rpx;" src="{{item.commodity.commodityImages[0]}}" />
+            <view>
+                <view>
+                    <text>{{item.commodity.title}}</text>
+                    <text>{{item.type==="default"?"￥"+item.commodity.price:item.type==="member"?"￥"+item.commodity.preferentialPrice:"积分"+item.commodity.exchange}}</text>
+                </view>
+                <view>
+                    {{item.selectSpecificationActive}}
+                </view>
+                <view>
+                    <text>{{item.otherSelectSpecificationActive}}</text>
+                    <text>X{{item.count}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <van-field
+    model:value="{{message}}"
+    clearable
+    label="留         言"
+    placeholder="如有什么需要告诉我们，请给我们留言哦"
+  />
+  
+  <van-cell title="优  惠  劵" value="选择地址后可选择优惠劵" border="{{true}}" is-link />
+    <view style="height: 123rpx;"></view>
+    <view class="submit" bindtap="doSubmit">
+    <view>
+        合计：￥{{orders.cost}}
+
+    </view>
+    <view>
+        去付钱
+    </view>
+    </view>
+</view>
